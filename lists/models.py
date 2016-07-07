@@ -21,7 +21,8 @@ class Wordlist(models.Model):
                                      upload_to=get_attachment_file_path)
     #content_type = models.ForeignKey(ContentType, null=False, blank=False,
     #                                 verbose_name='Content Type')
-    type = models.ForeignKey('WordlistType', related_name='rn_typelists')
+    type = models.ForeignKey('WordlistType', related_name='rn_typelists',
+                             verbose_name="List Type")
     family = models.ForeignKey('Family', related_name='rn_familylists',
                                blank=True, null=True)
     format = models.ForeignKey('Format', related_name='rn_formatlists',
@@ -47,30 +48,37 @@ class Wordlist(models.Model):
 
     #def get_file_size(self):
 
+    _importing = None
+
     class Meta:
         verbose_name = _('Wordlist')
         verbose_name_plural = _('Wordlists')
         ordering = ('name',)
 
+    def __init__(self, *args, **kwargs):
+        super(Wordlist, self).__init__(*args, **kwargs)
+        self.__orig_wordlist_file = self.wordlist_file
+
     def _generate_sha1(self, blocksize=65536):
         hasher = hashlib.sha1()
         while True:
-            buff = self.attached_file.file.read(blocksize)
+            buff = self.wordlist_file.file.read(blocksize)
             if not buff:
                 break
             hasher.update(buff)
         self.sha1 = hasher.hexdigest()
 
     def save(self, *args, **kwargs):
-        if not self._importing or not self.modified_date:
-            self.modified_date = timezone.now()
-        if self.attached_file:
-            if not self.sha1 or self.attached_file != self._orig_attached_file:
+        if not self._importing or not self.date_modified:
+            self.date_modified = timezone.now()
+        if self.wordlist_file:
+            if not self.sha1 or self.wordlist_file != self._orig_wordlist_file:
                 self._generate_sha1()
+        # TODO: Also generate wordcount and file size from the attachment during save.
         save = super().save(*args, **kwargs)
-        self._orig_attached_file = self.attached_file
-        if self.attached_file:
-            self.attached_file.file.close()
+        self._orig_wordlist_file = self.wordlist_file
+        if self.wordlist_file:
+            self.wordlist_file.file.close()
         return save
 
     def __str__(self):
@@ -104,6 +112,8 @@ class Format(models.Model):
 
 class Family(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    kali_path = models.CharField(max_length=255, blank=True, null=True,
+                                 verbose_name="Kali Install Path")
 
     class Meta:
         verbose_name = _('Family')

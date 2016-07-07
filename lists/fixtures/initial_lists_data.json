@@ -1,0 +1,221 @@
+[
+  {
+    "pk": 1,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "AUTH-Hashes"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "AUTH-Passwords"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "AUTH-Users"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "AUTH-UsersAndPasswords"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "CMS-Drupal"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "CMS-WordPress"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "Databases"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "DNS"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "FILES-Patterns"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "SNMP"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "URL-Patterns"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "URL-UserAgentStrings"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "lists.wordlisttype",
+    "fields": {
+      "name": "WIFI"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "lists.family",
+    "fields": {
+      "name": "dirb",
+      "kali_path": "/usr/share/dirb/wordlists"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "lists.family",
+    "fields": {
+      "name": "dirbuster",
+      "kali_path": "/usr/share/dirbuster/wordlists"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "lists.family",
+    "fields": {
+      "name": "dnsenum",
+      "kali_path": "/usr/share/dnsenum"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "lists.family",
+    "fields": {
+      "name": "dnsmap",
+      "kali_path": "/usr/share/dnsmap"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "lists.family",
+    "fields": {
+      "name": "dnsrecon",
+      "kali_path": "/usr/share/dnsrecon"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "lists.family",
+    "fields": {
+      "name": "fern-wifi-cracker",
+      "kali_path": "/usr/share/fern-wifi-cracker/extras/wordlists"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "lists.family",
+    "fields": {
+      "name": "metasploit-framework",
+      "kali_path": "/usr/share/metasploit-framework/data/wordlists"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "lists.family",
+    "fields": {
+      "name": "ncrack",
+      "kali_path": "/usr/share/ncrack"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "lists.family",
+    "fields": {
+      "name": "nmap",
+      "kali_path": "/usr/share/nmap/nselib/data"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "lists.family",
+    "fields": {
+      "name": "SET",
+      "kali_path": "/usr/share/set/src/fasttrack"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "lists.family",
+    "fields": {
+      "name": "john",
+      "kali_path": "/usr/share/john"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "lists.family",
+    "fields": {
+      "name": "sqlmap",
+      "kali_path": "/usr/share/sqlmap/txt"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "lists.family",
+    "fields": {
+      "name": "w3af",
+      "kali_path": "/usr/share/w3af/w3af/core/controllers/bruteforce"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "lists.family",
+    "fields": {
+      "name": "webslayer",
+      "kali_path": "/usr/share/webslayer/wordlist"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "lists.family",
+    "fields": {
+      "name": "wfuzz",
+      "kali_path": "/usr/share/wfuzz/wordlist/"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "lists.family",
+    "fields": {
+      "name": "wpscan",
+      "kali_path": "/usr/share/wpscan/data"
+    }
+  }
+]

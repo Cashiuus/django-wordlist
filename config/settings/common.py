@@ -101,7 +101,11 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db('DATABASE_URL', default='postgres:///django_wordlist'),
+    #'default': env.db('DATABASE_URL', default='postgres:///django_wordlist'),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(APPS_DIR.path('db.sqlite3')),
+    }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 

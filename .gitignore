@@ -1,9 +1,7 @@
 ### Project-Specific ###
 
 research/*
-
-
-
+db.sqlite3
 
 
 ### OSX ###
@@ -70,3 +68,4 @@ django_wordlist/media/
 # Hitch directory
 tests/.hitch
 
+/research/
