@@ -38,6 +38,9 @@ class Wordlist(models.Model):
     # TODO: Once it's running, add in a field for the file upload itself
     file_size = models.IntegerField(blank=True, null=True)
 
+    online_source = models.URLField(blank=True, null=True,
+                                    verbose_name='Online Source')
+
     date_origin = models.DateField(verbose_name='Est Date of Origin',
                                    blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
